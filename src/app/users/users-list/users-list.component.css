@@ -1,0 +1,26 @@
+table {
+    margin-top: 20px;
+    height: 350px;
+}
+
+th, td, th:hover, td:hover {
+    text-align: center;
+    cursor: pointer;
+    font-family: Inconsolata;
+    font-size: 20px;
+}
+
+tr td {
+    vertical-align: middle;
+    font-family: Inconsolata;
+    font-size: 18px;
+}
+
+img {
+    height: 50px;
+    width: 55px;
+}
+
+.options {
+    margin-top: 50px;
+}
