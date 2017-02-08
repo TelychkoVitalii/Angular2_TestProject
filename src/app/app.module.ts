@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
-import { DataTableModule } from "angular2-datatable";
 import { routing } from "./app-routing.module";
-import { UserService } from "./services/user.service";
+
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -22,10 +22,10 @@ import { UserService } from "./services/user.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    DataTableModule,
-    routing
+    routing,
+    Ng2FilterPipeModule
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

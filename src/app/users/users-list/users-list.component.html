@@ -4,42 +4,32 @@
         <div class="row options">
             <div class="col-md-3">
                 <h3>Sort by</h3>
-                <select class="form-control">
-                  <option>FirstName</option>
-                  <option>LastName</option>
-                  <option (click)="onAge()">Age</option>
-                  <option>City</option>
+                <select class="form-control" (change)="selectedSort($event)">
+                  <option *ngFor="let sortName of sortBy">{{ sortName }}</option>
                 </select>
             </div>
             <div class="col-md-3">
                 <h3>Filter by name</h3>
                   <div class="form-group">
-                      <input type="text" class="form-control" id="filter" placeholder="Filter by name">
+                      <input type="text" class="form-control" id="filter"
+                             placeholder="Filter by name">
                   </div>
             </div>
             <div class="col-md-3">
                 <h3>Total Info</h3>
-                <select class="form-control">
-                  <option>Total users</option>
-                  <option>Men</option>
-                  <option>Women</option>
-                  <option>Average age</option>
+                <select class="form-control" [ngModel]="selectedChoice"
+                        (change)="selectedTotal($event)">
+                  <option *ngFor="let totalItem of totalBy">{{ totalItem }}</option>
                 </select>
-                <!--<button (click)="averageAge()">njnlnl</button>-->
             </div>
-            <div class="col-md-3">
-            {{ value }}
+            <div class="col-md-3 total">
+                {{ selectedChoice }}
             </div>
         </div>
      <table class="table table-hover table-bordered">
         <thead>
         <tr>
-             <th>FirstName</th>
-             <th>LastName</th>
-             <th>Avatar</th>
-             <th>Age</th>
-             <th>City</th>
-             <th>Sex</th>
+             <th *ngFor="let headers of tableItems">{{ headers }}</th>
         </tr>
         </thead>
         <tbody>
